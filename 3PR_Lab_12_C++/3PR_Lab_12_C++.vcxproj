@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClInclude Include="Building.h" />
     <ClInclude Include="Facade.h" />
+    <ClInclude Include="Garage.h" />
+    <ClInclude Include="HouseWithGarage.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3PR_Lab_12_C++.cpp" />

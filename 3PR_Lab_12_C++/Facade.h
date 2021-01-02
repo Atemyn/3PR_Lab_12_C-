@@ -91,4 +91,4 @@ public:
 		windowsAmount += facadeToAdd.windowsAmount;
 		openedWindowsAmount += facadeToAdd.openedWindowsAmount;
 	}
-}; #pragma once
+};
