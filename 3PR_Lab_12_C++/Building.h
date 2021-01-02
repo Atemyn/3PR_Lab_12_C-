@@ -10,7 +10,7 @@ using namespace std;
 
 class Building
 {
-private:
+protected:
 	// Количество созданных зданий.
 	static int countOfBuildings;
 	// Тип здания.
@@ -28,6 +28,7 @@ private:
 	Facade facade;
 	// Коэффициент устойчивости.
 	float stabilityFactor;
+private:
 	/* Функция по установке переданных значений в свойства экземпляра класса Building. */
 	void setBuilding(string typeOfBuilding, char* address, float sideLength, float basementHeight, float floorHeight, int floorAmount, int windowsAmount, int openedWindowsAmount)
 	{
