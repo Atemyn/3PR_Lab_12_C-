@@ -42,14 +42,15 @@ public:
 			cin.clear();
 			rewind(stdin);
 		}
+		cout << endl;
 	}
 
 	void getGarage()
 	{
 		cout << "Данные о гараже:" << endl;
-		cout << "Длина стороны гаража:" << sideLength << endl;
-		cout << "Ширина стороны гаража:" << sideWidth << endl;
-		cout << "Высота гаража:" << height << endl;
+		cout << "Длина стороны гаража: " << sideLength << endl;
+		cout << "Ширина стороны гаража: " << sideWidth << endl;
+		cout << "Высота гаража: " << height << endl;
 	}
 
 	float getSideLength()

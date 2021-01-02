@@ -137,7 +137,7 @@ public:
 	}
 
 	/* Функция по выводу свойств экземпляра класса Building. */
-	void getBuilding()
+	void get()
 	{
 		cout << "Свойства данного здания:" << endl;
 		cout << "Название строительной компании: " << companyName << endl;
@@ -152,7 +152,7 @@ public:
 		cout << "Коэффициент устойчивости: " << stabilityFactor << endl << endl;
 	}
 	/* Функция по вводу с клавиатуры свойств для экземпляра класса Building */
-	void inputBuilding()
+	void input()
 	{
 		// Защиты от дурака для ввода всех необходимых данных.
 		cout << "Введите тип вашего здания (в виде строки): ";
@@ -209,21 +209,21 @@ public:
 			{
 				throw stabilityFactor;
 			}
-			if (stabilityFactor == 1)
+			if (stabilityFactor == 1.0)
 			{
 				throw '1';
 			}
-			cout << "Отлично! Здание получилось устойчивым с коэффициентом устойчивости k = " << stabilityFactor << "." << endl << endl << endl;
+			cout << "Отлично! Здание получилось устойчивым с коэффициентом устойчивости k = " << stabilityFactor << "." << endl;
 		}
-		catch (int k)
+		catch (float k)
 		{
-			cout << "Здание не смогло устоять и упало, так как его коэффициент устойчивости k = " << k << "." << endl << endl << endl;
+			cout << "Здание не смогло устоять и упало, так как его коэффициент устойчивости k = " << k << "." << endl;
 			char adr[] = "NONE";
 			this->setBuilding("Жилое здание", adr, 1.0, 1.0, 1.0, 1, 0, 0);
 		}
 		catch (char ch)
 		{
-			cout << "Здание получислось с минимально возможным коэффицентом устойчивости 1. Дальнейшее его ослабление приведет к разрушению." << endl << endl << endl;
+			cout << "Здание получислось с минимально возможным коэффицентом устойчивости 1. Дальнейшее его ослабление приведет к разрушению." << endl;
 		}
 	}
 	/* Функция по сложению двух экземпляров класса Building, где build - экземпляр, который будет прибавляться. */
@@ -266,7 +266,7 @@ public:
 		else
 		{
 			cout << "Отлично! Новое здание устояло. Его свойства такие:" << endl << endl;
-			getBuilding();
+			this->get();
 		}
 	}
 	/* Функция по добавлению floorsToAdd этажей экземпляру класса Building. */
@@ -296,7 +296,7 @@ public:
 		{
 			cout << "Отлично! Здание получилось устойчивым с коэффициентом устойчивости k = " << stabilityFactor << endl << endl;
 			// Отображение информации о здании.
-			getBuilding();
+			this->get();
 		}
 	}
 
@@ -317,19 +317,19 @@ public:
 		stabilityFactor = (float)(sideLength * sideLength * sqrt(basementHeight)) / (floorHeight * floorAmount);
 		cout << "Этажи успешно удалены!" << endl;
 		// Отображение информации о здании.
-		getBuilding();
+		this->get();
 	}
 
 	void openWindowsOnFacade()
 	{
 		facade.openWindows();
-		getBuilding();
+		this->get();
 	}
 
 	void closeWindowsOnFacade()
 	{
 		facade.closeWindows();
-		getBuilding();
+		this->get();
 	}
 
 	int getWindowsAmount()
