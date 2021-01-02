@@ -136,6 +136,39 @@ public:
 		countOfBuildings--;
 	}
 
+	string getTypeOfBuilding()
+	{
+		return typeOfBuilding;
+	}
+	char* getAddress()
+	{
+		return address;
+	}
+	float getSideLength()
+	{
+		return this->sideLength;
+	}
+	float getBasementHeight()
+	{ 
+		return basementHeight;
+	}
+	float getFloorHeight()
+	{
+		return floorHeight;
+	}
+	int getFloorAmount()
+	{
+		return floorAmount;
+	}
+	Facade getFacade()
+	{
+		return facade;
+	}
+	float getStabilityFactor()
+	{
+		return stabilityFactor;
+	}
+
 	/* ‘ункци€ по выводу свойств экземпл€ра класса Building. */
 	void get()
 	{

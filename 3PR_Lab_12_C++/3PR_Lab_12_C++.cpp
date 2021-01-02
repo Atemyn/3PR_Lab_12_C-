@@ -9,9 +9,17 @@ int main()
 	SetConsoleOutputCP(1251);
 
 	/* Работа с производным классом. */
-	HouseWithGarage house;
-	house.input();
-	house.get();
+	HouseWithGarage house1;
+	house1.input();
+	house1.get();
+
+	HouseWithGarage* house2 = new HouseWithGarage((string)"Коттедж", (char *)"улица Пушкина, 1А", 5.0, 1.0, 3.0, 5, 5, 5, 1.0, 2.0, 3.0);
+	house2->get();
+
+	Building building;
+	HouseWithGarage house3;
+	house3 = building;
+	house3.get();
 	/*...............................*/
 	return 0;
 }

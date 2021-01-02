@@ -7,7 +7,16 @@ class HouseWithGarage : public Building
 private:
 	Garage garage;
 public:
-
+	HouseWithGarage()
+	{
+		this->garage.setGarage(1.0, 1.0, 1.0);
+	}
+	HouseWithGarage(string typeOfBuilding, char* address, float sideLength, float basementHeight,
+		float floorHeight, int floorAmount, int windowsAmount, int openedWindowsAmount, float sideLengthG,
+		float sideWidthG, float heightG) :Building(typeOfBuilding, address, sideLength, basementHeight, floorHeight, floorAmount, windowsAmount, openedWindowsAmount)
+	{
+		this->garage.setGarage(sideLengthG, sideWidthG, heightG);
+	}
 	/* Функция по выводу свойств экземпляра класса Building. */
 	void get()
 	{
@@ -24,6 +33,19 @@ public:
 		cout << "Коэффициент устойчивости: " << stabilityFactor << endl;
 		garage.getGarage();
 		cout << endl;
+	}
+	
+	void operator=(Building b)
+	{
+		this->typeOfBuilding = b.getTypeOfBuilding();
+		this->address = b.getAddress();
+		this->sideLength = b.getSideLength();
+		this->basementHeight = b.getBasementHeight();
+		this->floorHeight = b.getFloorHeight();
+		this->floorAmount = b.getFloorAmount();
+		this->facade = b.getFacade();
+		this->stabilityFactor = b.getStabilityFactor();
+		this->garage.setGarage(1, 1, 1);
 	}
 
 	void input()
@@ -51,5 +73,6 @@ public:
 	{
 		garage.getHeight();
 	}
+
 };
 
