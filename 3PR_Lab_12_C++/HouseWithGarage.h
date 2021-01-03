@@ -48,6 +48,23 @@ public:
 		this->garage.setGarage(1, 1, 1);
 	}
 
+	friend void operator<<(ostream& o, HouseWithGarage h)
+	{
+		cout << "Свойства данного здания:" << endl;
+		cout << "Название строительной компании: " << companyName << endl;
+		cout << "Общее количество зданий этой компании: " << countOfBuildings << endl;
+		cout << "Тип здания: " << h.typeOfBuilding << endl;
+		cout << "Адрес здания: " << h.address << endl;
+		cout << "Длина стороны основания: " << h.sideLength << endl;
+		cout << "Высота фундамента: " << h.basementHeight << endl;
+		cout << "Высота этажа: " << h.floorHeight << endl;
+		cout << "Количество этажей: " << h.floorAmount << endl;
+		h.facade.getFacade();
+		cout << "Коэффициент устойчивости: " << h.stabilityFactor << endl;
+		h.garage.getGarage();
+		cout << endl;
+	}
+
 	void input()
 	{
 		Building::input();

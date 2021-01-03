@@ -168,7 +168,20 @@ public:
 	{
 		return stabilityFactor;
 	}
-
+	friend void operator<<(ostream& o, Building b)
+	{
+		cout << "Свойства данного здания:" << endl;
+		cout << "Название строительной компании: " << companyName << endl;
+		cout << "Общее количество зданий этой компании: " << countOfBuildings << endl;
+		cout << "Тип здания: " << b.typeOfBuilding << endl;
+		cout << "Адрес здания: " << b.address << endl;
+		cout << "Длина стороны основания: " << b.sideLength << endl;
+		cout << "Высота фундамента: " << b.basementHeight << endl;
+		cout << "Высота этажа: " << b.floorHeight << endl;
+		cout << "Количество этажей: " << b.floorAmount << endl;
+		b.facade.getFacade();
+		cout << "Коэффициент устойчивости: " << b.stabilityFactor << endl << endl;
+	}
 	/* Функция по выводу свойств экземпляра класса Building. */
 	void get()
 	{
