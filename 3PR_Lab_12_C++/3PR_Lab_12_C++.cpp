@@ -1,4 +1,7 @@
-#include "HouseWithGarage.h"
+#include "HouseWithGarage.h";
+#include "SquareBaseBuilding.h";
+#include "CircleBaseBuilding.h";
+#include "TetrahedronBuilding.h";
 
 int main()
 {
@@ -36,7 +39,14 @@ int main()
 	b2 = h2;
 	f1 = b2->volumeLessThan(375);
 	cout << "Через присваивание указателей:" << endl;
-	cout << "f1 = " << f1 << endl;
+	cout << "f1 = " << f1 << endl << endl;
+	// Производные классы от абстрактного класса.
+	SquareBaseBuilding s(5.0, 10.0, 1000.0);
+	CircleBaseBuilding c(5.0, 10.0, 1000.0);
+	TetragedronBuilding t(5.0, 10.0, 1000.0);
+	cout << "Здание с квадратным основанием:" << endl << "Объем: " << s.getVolume() << endl << "Плотность: " << s.getDensity() << endl << endl;
+	cout << "Здание с круглым основанием:" << endl << "Объем: " << c.getVolume() << endl << "Плотность: " << c.getDensity() << endl << endl;
+	cout << "Здание-тетраэдр:" << endl << "Объем: " << t.getVolume() << endl << "Плотность: " << t.getDensity() << endl << endl;
 	/*...............................*/
 	return 0;
 }

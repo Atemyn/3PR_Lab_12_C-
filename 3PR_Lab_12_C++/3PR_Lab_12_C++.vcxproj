@@ -140,9 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
+    <ClInclude Include="BuildingLayout.h" />
+    <ClInclude Include="CircleBaseBuilding.h" />
     <ClInclude Include="Facade.h" />
     <ClInclude Include="Garage.h" />
     <ClInclude Include="HouseWithGarage.h" />
+    <ClInclude Include="SquareBaseBuilding.h" />
+    <ClInclude Include="TetrahedronBuilding.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3PR_Lab_12_C++.cpp" />
