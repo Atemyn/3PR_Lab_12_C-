@@ -20,6 +20,23 @@ int main()
 	HouseWithGarage house3;
 	house3 = building;
 	cout << house3;
+	// Разумное использование виртуальной функции.
+	// Объем равен 375. 
+	Building b1((string)"Коттедж", (char*)"улица Пушкина, 1А", 5.0, 1.0, 3.0, 5, 5, 5);
+	// Объем равен 376.
+	HouseWithGarage h1((string)"Коттедж", (char*)"улица Пушкина, 1А", 5.0, 1.0, 3.0, 5, 5, 5, 1.0, 1.0, 1.0);
+	bool f1, f2;
+	f1 = b1.volumeLessThan(375.0);
+	f2 = h1.volumeLessThan(375.0);
+	cout << "f1 = " << f1 << endl;
+	cout << "f2 = " << f2 << endl << endl;
+
+	Building* b2 = new Building((string)"Коттедж", (char*)"улица Пушкина, 1А", 5.0, 1.0, 3.0, 5, 5, 5);
+	HouseWithGarage* h2 = new HouseWithGarage((string)"Коттедж", (char*)"улица Пушкина, 1А", 5.0, 1.0, 3.0, 5, 5, 5, 1.0, 1.0, 1.0);
+	b2 = h2;
+	f1 = b2->volumeLessThan(375);
+	cout << "Через присваивание указателей:" << endl;
+	cout << "f1 = " << f1 << endl;
 	/*...............................*/
 	return 0;
 }

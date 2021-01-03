@@ -35,6 +35,12 @@ public:
 		cout << endl;
 	}
 	
+	float getVolume()
+	{
+		return (sideLength * sideLength * floorHeight * floorAmount) + 
+			(getSideLength() * getSideWidth() * getHeight());
+	}
+
 	void operator=(Building b)
 	{
 		this->typeOfBuilding = b.getTypeOfBuilding();
@@ -78,17 +84,17 @@ public:
 
 	float getSideLength()
 	{
-		garage.getSideLength();
+		return garage.getSideLength();
 	}
 
 	float getSideWidth()
 	{
-		garage.getSideWidth();
+		return garage.getSideWidth();
 	}
 
 	float getHeight()
 	{
-		garage.getHeight();
+		return garage.getHeight();
 	}
 
 };

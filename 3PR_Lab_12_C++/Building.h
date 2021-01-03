@@ -168,6 +168,20 @@ public:
 	{
 		return stabilityFactor;
 	}
+
+	virtual float getVolume()
+	{
+		return sideLength * sideLength * floorHeight * floorAmount;
+	}
+
+	bool volumeLessThan(float Number)
+	{
+		if (getVolume() <= Number)
+			return true;
+		else
+			return false;
+	}
+
 	friend void operator<<(ostream& o, Building b)
 	{
 		cout << "Свойства данного здания:" << endl;
